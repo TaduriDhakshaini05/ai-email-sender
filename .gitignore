@@ -1,5 +1,8 @@
-.env
-__pycache__/
+# Ignore Python virtual environment
 venv/
-*.pyc
-.DS_Store
+
+# Ignore Python cache
+__pycache__/
+
+# Ignore environment variables file
+.env
