@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Email Sender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Generated Email Sender</h1>
+
+        <form method="POST">
+            <label for="recipients">Recipients (comma-separated emails):</label>
+            <input type="text" name="recipients" id="recipients" required>
+
+            <label for="prompt">Enter Prompt for the Email:</label>
+            <textarea name="prompt" id="prompt" rows="4" required>{{ prompt or '' }}</textarea>
+
+            <button type="submit" name="action" value="generate">Generate Email</button>
+
+            {% if generated_email %}
+                <label for="email_body">Generated Email:</label>
+                <textarea name="email_body" id="email_body" rows="10">{{ generated_email }}</textarea>
+
+                <button type="submit" name="action" value="send">Send Email</button>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>
